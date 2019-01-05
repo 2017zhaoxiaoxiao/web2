@@ -48,6 +48,7 @@ ul,li,ol{
 .top1{
 	height:44px;
 }
+
 .top2{
 	margin:0 auto;
 	height:70px;
@@ -55,10 +56,12 @@ ul,li,ol{
 }
 .top3{
 	height:20px;
+	margin:0 auto;
 }
 .top4{
 	height:54px;
 }
+
 .ig3{
 	width:146px;
 	height:70;
