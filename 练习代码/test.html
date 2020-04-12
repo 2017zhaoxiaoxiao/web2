@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<form>
+	<input type="text" value="0" id="time"/><br/>
+	<input type="button" value="开始计时" onclick="start()" />
+	<input type="button" value="结束计时" onclick="stop()" />
+</form>
+<script type="text/javascript">
+var time = document.getElementById('time');
+var result;
+function start(){
+	result= setInterval('time.value++',1000)
+}
+function stop(){
+	clearInterval(result)
+}
+</script>
+</body>
+</html>

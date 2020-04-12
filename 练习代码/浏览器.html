@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>add1</title>
+	<style type="text/css">
+</style>
+</head>
+<body onload="fn()">
+	
+	<script type="text/javascript">
+		var userAgent=navigator.userAgent;
+		if(userAgent.indexOf("Chrome")>=0){
+			alert("这是谷歌浏览器");
+		}
+		else if(userAgent.indexOf("FireFox")>=0)
+			alert("这是火狐浏览器");
+		else if(userAgent.indexOf("MSIE")>=0)
+			alert("这是IE浏览器");
+		else
+			alert("这是其他浏览器");
+
+            var num = 100;
+
+            a(  );
+
+            var a = function( ){
+                    console.log('a2');
+            }
+
+            function a( ){
+
+                    console.log(num);
+
+                    var num = 200;
+                    console.log('a1');
+            }
+           
+            a(  );
+
+    
+	</script>
+</body>

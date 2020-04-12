@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时钟</title>
+</head>
+<body>
+<div id='time'></div>
+<script type="text/javascript">
+	function animate() {
+                var textValue = new Date().toLocaleTimeString().slice(2);
+                document.getElementById('time').innerHTML=textValue;
+            };
+    setInterval(animate,1000);
+</script>
+</body>
+</html>

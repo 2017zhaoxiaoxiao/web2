@@ -1,0 +1,61 @@
+<!DOCTYPE pyhtml>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>创建表格</title>
+	<style type="text/css">
+	
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var table=document.createElement("table");
+		document.body.appendChild(table);
+		table.setAttribute("border","1px");
+		table.setAttribute("cellspacing","0");
+		var trArr=new Array();
+		var tdArr=new Array();
+		for(var i=0;i<7;i++){
+		trArr[i]=document.createElement("tr");
+		table.appendChild(trArr[i]);
+		for(var j=0;j<5;j++){
+			tdArr[j]=document.createElement("td");
+			tdArr[j].setAttribute("width","120px");
+			tdArr[j].setAttribute("height","30px");
+			trArr[i].appendChild(tdArr[j]);
+			if(j==0){
+				var button=document.createElement("button");
+				tdArr[j].appendChild(button);
+				var text=document.createTextNode("点击我删除行"+i);
+				button.appendChild(text);
+				//button.setAttribute("onclick","delet(this)");
+				button.onclick=function(){
+					table.removeChild(this.parentNode.parentNode);
+				}
+			}
+		}
+
+	}
+	// function delet(that){
+	// 	var c=that.parentElement.parentElement;
+	// 		c.innerHTML="";
+
+	// }
+		// var td1=document.createElement("td");
+		// var td2=document.createElement("td");
+		// var td3=document.createElement("td");
+		// table.setAttribute("border","solid");
+		// td1.setAttribute("width","100px");
+		// td1.setAttribute("height","40px");
+		// td2.setAttribute("width","100px");
+		// td2.setAttribute("height","40px");
+		// td3.setAttribute("width","100px");
+		// td3.setAttribute("height","40px");
+		// table.appendChild(tr);
+		// tr.appendChild(td1);
+		// tr.appendChild(td2);
+		// tr.appendChild(td3);
+
+	</script>
+</body>
+</html>

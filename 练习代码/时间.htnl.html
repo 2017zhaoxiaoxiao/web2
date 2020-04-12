@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>时间</title>
+	<style type="text/css">
+	
+</style>
+</head>
+<body>
+	<form>
+
+    	<input type="text" id="time" value/>
+
+    	<input type="button" value="暂停" onclick="clearTimer()"/>
+
+    	<input type="button" value="继续" onclick="setTimer()"/>
+
+	</form>
+	<script type="text/javascript">
+		var now = new Date();
+		var h=now.getHours()>9?now.getHours():"0"+now.getHours();
+		var m=now.getMinutes()>9?now.getMinutes():"0"+now.getMinutes();
+		var s=now.getSeconds()>9?now.getSeconds():"0"+now.getSeconds();
+		time.value=now.getFullYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日"+
+		" "+h+":"+m+":"+s;
+		function a() {
+				var now1=new Date();
+				var h1=now1.getHours()>9?now1.getHours():"0"+now1.getHours();
+				var m1=now1.getMinutes()>9?now1.getMinutes():"0"+now1.getMinutes();
+				var s1=now1.getSeconds()>9?now1.getSeconds():"0"+now1.getSeconds();
+                time.value= now.getFullYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日"+" "+h1+":"+m1+":"+s1;
+                
+            }
+        var id;
+        function setTimer(){
+        	id=setInterval(a,1000);
+        }
+    	function clearTimer(){
+    		clearInterval(id);
+    	}
+		
+	</script>
+</body>
+</html>

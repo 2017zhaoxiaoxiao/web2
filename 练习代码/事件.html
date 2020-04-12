@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>add1</title>
+	<style type="text/css">
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+
+      function showNumber(){
+      	var num=0;
+      	for (var i = 1; i <=3000; i++) {
+      		if(i%3==0&&i%5==0&&i%7==0){		
+      			 num++;	
+      		}
+      }
+      	sum=0;
+      	for (var i = 1; i <=3000; i++) {
+      		if(i%3==0&&i%5==0&&i%7==0){
+      			sum++;
+      			if(sum==num||sum%6==0){
+      				document.write(i+"<br/>");
+      				
+      			}
+      			else{
+      			document.write(i);
+      			document.write(",");
+      			
+      			}
+      			
+      			
+      		}
+      			
+    }  			 
+  }
+    showNumber();
+    </script>
+	<!-- <form>
+		<select onchange="changeEvent()">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</form>
+	<script type="text/javascript">
+		function changeEvent() {
+			alert("onchange");
+		}
+	</script> -->
+</body>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="am.js"></script>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="imgs/banner_05.jpg" alt=""></div>
+			<div class="slide"><img src="imgs/banner_01.jpg" alt=""></div>
+			<div class="slide"><img src="imgs/banner_02.jpg" alt=""></div>
+			<div class="slide"><img src="imgs/banner_03.jpg" alt=""></div>
+			<div class="slide"><img src="imgs/banner_04.jpg" alt=""></div>
+			<div class="slide"><img src="imgs/banner_05.jpg" alt=""></div>
+			<div class="slide"><img src="imgs/banner_01.jpg" alt=""></div>
+		</div>
+		<span id="left"><</span>
+		<span id="right">></span>
+		<ul class="nav" id="nav">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+<script type="text/javascript">
+	var slider=document.getElementById('slider');
+	var nav=document.getElementById('nav').children;
+	var index=1;
+	function next(){
+		index++;
+		animate(slider,{left:-1200*index},function(){
+			if(index==6){
+				slider.style.left="-1200px";
+				index=1;
+			}
+		});
+		navChange();
+	}
+	function prev(){
+		index--;
+		animate(slider,{left:-1200*index},function(){
+			if(index==0){
+				slider.style.left="-6000px";
+				index=5;
+			}
+		});
+		navChange();
+	}
+	var timer=setInterval(next,3000);
+	//鼠标划上时停止轮播，左右箭头淡入
+	var box=document.getElementById('box');
+	var right=document.getElementById('right');
+	var left=document.getElementById('left');
+	box.onmouseover=function(){
+		clearInterval(timer);
+		animate(left,{opacity:50})
+		animate(right,{opacity:50})
+
+	}
+	//鼠标划离时开始轮播，左右箭头淡出
+	box.onmouseout=function(){
+		animate(left,{opacity:0});
+		animate(right,{opacity:0});
+		timer=setInterval(next,3000);
+	}
+	//点击左右箭头，移动
+	right.onclick=next;
+	left.onclick=prev
+	//点击小按钮，让slider找到指定位置
+	
+	for(var i=0;i<nav.length;i++){
+		nav[i].idx=i;
+		nav[i].onclick=function(){
+			index=this.idx+1;
+			animate(slider,{left:index*-1200})
+			navChange();
+		}
+	}
+	function navChange(){
+		for(var i=0;i<nav.length;i++){
+			nav[i].className="";
+		}
+		if(index==6){
+			nav[0].className='active';
+		}
+		else if(index==0){
+			nav[4].className='active';
+		}
+		else{
+			nav[index-1].className="active";
+		}
+	}
+</script>
+</body>
+</html>

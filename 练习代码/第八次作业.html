@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>删除任务</title>
+    <style type="text/css">
+    #left{
+    	margin:104px 18px 0px 40px;
+    	width:350px;
+    	height:auto;
+    	border:10px solid #ffff24;
+    	float:left;
+    }
+ 	#right{
+ 		margin-top:104px;
+ 		border:10px solid #ffbdc4;
+    	float:left;
+    	width:370px;
+    	height:250px;
+
+ 	}
+ 	#btn1{
+ 		width:346px;
+ 		height:54px;
+ 		margin:24px 14px 12px 14px;
+ 		background-color:#6b0e2e;
+ 		color:white;
+ 		font-size:20px;
+
+ 	}
+ 	#btn2{
+ 		width:346px;
+ 		height:54px;
+ 		margin:10px 14px 12px 14px;
+ 		background-color:#6b0e2e;
+ 		color:white;
+ 		font-size:20px;
+ 	}
+ 	.add{
+ 		float: left;
+ 		font-size:20px;
+ 		margin:0px 6px 0px 14px; 
+ 	} 
+ 	.l{
+ 		float:left;
+ 		margin-top:0px ;
+ 	}
+ 	select{
+ 		float:left;
+ 		margin-left: 12px;
+ 		margin-right:8px;
+ 	} 
+ 	#text1{
+ 		width:344px;
+ 		height:38px;
+ 		margin-left:8px;
+ 		padding-left:10px;
+ 	}
+ 	
+ 	.time1{
+ 		font-size: 12px;
+ 		float: right;
+ 		margin-right:44px; 
+ 		margin-top:14px; 
+ 		
+ 	}
+ 	img{
+ 		float:right;
+ 		margin-right:14px;
+ 		margin-top:14px;
+ 	}
+ 	.in{
+ 		float:left;
+ 		margin-left:14px;
+ 		margin-top:10px;
+ 		margin-right:14px; 
+ 		margin-bottom:0px; 
+ 	}
+ 	.title{
+ 		float:left;
+ 		margin-top:10px;
+ 		margin-bottom: 0px;
+
+ 	}
+ 	
+ 	.time2{
+ 		float: left;
+ 		margin:10px 0px 0px 40px;
+ 		font-size: 12px;
+ 		color:#c9c7c3;
+ 	}
+ 	#first{
+ 		width:350px;
+ 		height:64px;
+ 		border-top:1px solid #c9c7c3;
+
+ 	}
+</style>
+</head>
+<body>
+	<div id="left">
+		<form id="packet">	
+			<div id="first">
+				<input class="in" type="checkbox" name="work">
+				<p class="title">任务一</p>
+				<p class="time1">01:00</p>
+				<img src="image/clock.png"/>
+				<p class="time2">发布于2018/11/21/02:23</p>
+			</div>
+			<div id="first">
+				<input class="in" type="checkbox" name="work">
+				<p class="title">任务二</p>
+				<p class="time1">01:30</p>
+				<img src="image/clock.png"/>
+				<p class="time2">发布于2018/11/21/02:23</p>
+			</div>
+			<div id="first">
+				<input class="in" type="checkbox" name="work">
+				<p class="title">任务三</p>
+				<p class="time1">03:00</p>
+				<img src="image/clock.png"/>
+				<p class="time2">发布于2018/11/21/02:23</p>
+			</div>
+		</form>
+	</div>
+	<div id="right">
+		<form>	
+			<button id="btn1" type="button" onclick="delet()">删除选中的任务</button>
+			<h1 class="add">添加任务:</h1>
+			<p class="l">时:</p>
+			<select id="hour" >
+			</select>
+    		<p class="l">分:</p>
+    		<select id="minute">
+    		</select>
+    		<input id="text1" name = "t" value="请输入任务详情" /> 
+			<button id="btn2" type="button" onclick="add1()" >添加任务</button>
+		</form>	
+	</div>
+	<script type="text/javascript">
+		var check=document.getElementsByClassName('in');
+		var first=document.getElementById('first');
+		var text1=document.getElementById("text1");
+		function delet(){
+			for(var i=check.length-1;i>=0;i--){			
+				if(check[i].checked){					
+					var child=check[i].parentElement;
+					child.parentElement.removeChild(child);
+
+				}
+			}
+		}
+		var hour=document.getElementById("hour");
+		for(var i=0;i<24;i++){
+			var btn=document.createElement("option");
+			var a=i<10?"0"+i:i;
+			var text=document.createTextNode(a);
+			hour.appendChild(btn);
+			btn.appendChild(text);
+
+		}
+		var minute=document.getElementById("minute");
+		for(var i=0;i<60;i++){
+			var btn=document.createElement("option");
+			var a=i<10?"0"+i:i;
+			var text=document.createTextNode(a);
+			minute.appendChild(btn);
+			btn.appendChild(text);
+		}
+		function add1(){
+			var packet=document.getElementById('packet');
+			var fir=document.createElement("div");
+			fir.setAttribute("id","first");
+			var inp=document.createElement("input");
+			inp.setAttribute("class","in");
+			inp.setAttribute("type","checkbox");			
+			var p1=document.createElement("p");
+			p1.setAttribute("class","title");
+			var te=document.createTextNode(text1.value);
+			p1.appendChild(te);
+			var img =document.createElement("img");
+			img.setAttribute("src",'image/clock.png');
+			var p2=document.createElement("p");
+			p2.setAttribute("class","time1");
+			var h=GetSelect1();
+			var m=GetSelect2();
+			var tb=document.createTextNode(h+":"+m);
+			p2.appendChild(tb);
+			var p3=document.createElement("p");
+			p3.setAttribute("class","time2");	
+			var t="发布于"+getTime();
+			var tc=document.createTextNode(t);
+			packet.appendChild(fir);
+			fir.appendChild(inp);
+			fir.appendChild(p1);
+			p3.appendChild(tc);
+			fir.appendChild(p2);
+			fir.appendChild(img);
+			fir.appendChild(p3);
+			text1.value="请输入任务详情";
+			hour.value="00";
+			minute.value="00";
+		}
+		
+		function GetSelect1(){	
+    		for(var i=0;i<hour.options.length;i++){
+        		if(hour.options[i].selected){
+            		return hour.options[i].value;
+            		break;
+        		}
+    		}
+		}
+		function GetSelect2(){	
+    		for(var i=0;i<minute.options.length;i++){
+        		if(minute.options[i].selected){
+            		return minute.options[i].value;
+            		break;
+        		}
+    		}
+    	}
+    	function getTime(){
+    		var now=new Date();
+    		var h=now.getHours()>9?now.getHours():"0"+now.getHours();
+			var m=now.getMinutes()>9?now.getMinutes():"0"+now.getMinutes();
+			
+			return now.getFullYear()+"/"+(now.getMonth()+1)+"/"+now.getDate()+"/"+
+			" "+h+":"+m;
+    	}
+	</script>
+</body>
+</html>

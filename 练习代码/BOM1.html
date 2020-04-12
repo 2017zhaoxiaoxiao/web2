@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>window</title>
+	<style type="text/css">
+</style>
+</head>
+<body>
+	<form>
+		<input type="text" value="0" id="time"/>
+		</br>
+		<input  onclick="delay()"  type="button" value="开始计时"/>
+		<input  onclick="lay()" type="button" value="结束计时"/>
+	<form>
+
+	<!-- <div id="time">
+
+	</div>	 -->
+	<script type="text/javascript">
+		// function animate(){
+		// 	var text=new Date().toLocaleString();
+		// 	document.getElementById('time').innerHTML=text;
+		// }
+		// setInterval(animate,1000);
+		// var time=document.getElementById('time');
+		 var result;
+		function delay(){	
+			result=setInterval("time.value++",1000);
+		}
+
+		function lay(){
+			clearInterval(result);
+		}
+	//function con(){
+	// 	return(confirm("确定要阅读完须知了吗？"))
+	// }
+	// 	if(con()==true)
+	// 		alert("请执行下一步操作！");
+	// 	else
+	// 		alert("请认真阅读须知！")
+	// var resule=confirm("确定要阅读完须知了吗？");
+	// if(result==true)
+	// 	alert("请执行下一步操作！");
+	// else
+	// 	alert("请认真阅读须知！")
+	///////////////////////////////////////////////////////////////////
+	// var a=prompt('请输入你的评价, 1(满意) 2(一般) 3(不满意)');
+
+	// if(a==1)
+	// 	document.write("谢谢您的评价！");
+	// else if(a==2)
+	// 	document.write("我们会继续改进");
+	// else
+	// 	document.write("给您带来不好体验深感抱歉！");
+	/////////延迟执行/////////////////////////////////////////////////
+	//setTimeout('alert("3秒了")',3000);
+	// var time=setTimeout(function(){
+	// 	alert("三秒了！")
+	// },3000);
+	// var tanchuang=function(){
+	// 	alert("三秒！")
+	// }
+	// setTimeout(tanchuang,300);
+	// 
+	////////周期执行
+	
+	
+
+	
+
+	</script>
+</body>
+</html>

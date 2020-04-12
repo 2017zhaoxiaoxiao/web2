@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>点名</title>
+	<style type="text/css">
+	div{
+		text-align: center;
+		font-size: 40px;
+
+	}
+</style>
+</head>
+<body>
+	<div id="text" >
+	</div>
+	<script type="text/javascript">
+		var i=0;
+		var arr =["赵肖肖","聂丹","晓萌","玉莹","雅琦","司函","东枚","奥钒"]; 
+		function findName(){
+			if(i<8)
+        		document.getElementById("text").innerHTML=arr[i++];
+        	else{
+        		document.getElementById("text").innerHTML=arr[0];
+        		i=0;
+			}
+        	
+    	}
+		var id;
+		var num=0;
+		document.onkeydown=function() {
+			if(num%2==0){
+				id=setInterval(findName,10);
+				num++;
+			}
+			else{
+				clearInterval(id);
+				num++;
+			}				
+		}
+    
+	</script>
+</body>
+</html>

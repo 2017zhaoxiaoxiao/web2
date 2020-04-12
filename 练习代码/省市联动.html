@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>省市列表</title>
+    <style>
+        body {
+            padding: 100px;
+            font-size: 30px;
+        }
+
+        select {
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    省份：<select id="province" onchange="getCity(this)">
+        <option value="-1">--请选择省份--</option>
+        <option value="0">河北</option>
+        <option value="1">广西</option>
+        <option value="2">陕西</option>
+    </select>
+
+    城市：<select id="city">
+        <option>--请选择城市--</option>
+    </select>
+
+
+    <script>
+        var citys=[['石家庄','唐山','保定','衡水','沧州','张家口'],['桂林','柳州','南宁'],['西安','宝鸡','延安']]
+        var top= document.getElementById('province');
+        var city= document.getElementById("city");
+
+        function clearSelect(that) {//清空列表框中的信息
+            while(that.length > 1){
+            that.options[1] = null;   
+            }
+        }
+        function getCity(that){
+        clearSelect(city);    
+        if(that.value==0){
+            for(var i=0;i<citys[0].length;i++){
+                var btn=document.createElement("option");
+                btn.setAttribute("id","w");
+                var text=document.createTextNode( citys[0][i]);
+                city.appendChild(btn);
+                btn.appendChild(text);
+
+            }
+        }
+        else if(that.value==1){
+            for(var i=0;i<citys[1].length;i++){
+                var btn=document.createElement("option");
+                var text=document.createTextNode( citys[1][i] );
+                city.appendChild(btn);
+                btn.appendChild(text);
+
+            }
+        }
+        else{
+            for(var i=0;i<citys[2].length;i++){
+                var btn=document.createElement("option");
+                var text=document.createTextNode( citys[2][i] );
+                city.appendChild(btn);
+                btn.appendChild(text);
+
+            }
+        }
+        
+    }
+
+    </script>
+</body>
+
+</html>

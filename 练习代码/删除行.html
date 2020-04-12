@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <link rel="stylesheet" href="css/7-2.css">
+    <style type="text/css">
+    td{
+    	width:80px;
+    	height:20px;
+    }
+</style>
+</head>
+
+
+<body>
+	<table border="1" cellspacing="0"  >
+		<tr>
+			<td><button>删除本行0</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行1</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行2</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行3</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行4</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行5</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行6</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button>删除本行7</button></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		//给button绑定时间属性和处理函数
+		var btn=document.getElementsByTagName('button');
+		for(var i=0;i<btn.length;i++){
+			btn[i].setAttribute('onclick','delet(this)');
+	}
+	//删除指定行
+		function delet(that){
+			var c=that.parentElement.parentElement;
+			c.innerHTML="";
+			
+
+		}
+
+	</script>
+</body>
+
+</html>

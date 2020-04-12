@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>跟随鼠标移动（大图展示）</title>
+		<style type="text/css">
+			html,body{overflow:hidden;}
+			body,div,ul,li{margin:0;padding:0;}
+			#box{width:768px;height:172px;list-style-type:none;margin:50px auto;}
+			#box li{width:170px;height:170px;border:1px solid #ddd;float:left;cursor:pointer;display:inline;margin:0 10px;}
+			#box li.active{border:1px solid #a10000;}
+			#box li img{width:170px;height:170px;vertical-align:top;}
+			#big{position:absolute;width:400px;height:400px;border:2px solid #ddd;display:none;}
+		</style>
+	</head>
+	<body>
+	    <ul id="box">
+	    	<li class="img1"><img src="shirt_1.jpg"></li>
+	        <li class="img1"><img src="shirt_2.jpg"></li>
+	        <li class="img1"><img src="shirt_3.jpg"></li>
+	        <li class="img1"><img src="shirt_4.jpg"></li>
+	    </ul>
+		<div id="big"></div>
+		<script type="text/javascript">
+
+			var img2;
+			var li=document.getElementsByTagName('li');
+			var big=document.getElementById('big');
+			li[0].onmouseover=function(){
+				big.style.display='block';
+				img2=document.createElement("img");
+				img2.setAttribute('src',"shirt_1_big.jpg");
+				big.appendChild(img2);
+				li[0].setAttribute("class","active");
+			}
+			active=document.getElementsByClassName("active");
+			li[0].onmouseout=function(){
+				big.style.display='none';
+				big.innerHTML="";
+				li[0].setAttribute("class","img1");
+				
+			}
+			li[0].onmousemove=function(ev){
+				var ol=ev.clientX;
+				var ot=ev.clientY;
+				big.style.left	=ol+10+"px";
+				big.style.top=ot+10+"px";
+			}
+
+			li[1].onmouseover=function(){
+				big.style.display='block';
+				img2=document.createElement("img");
+				img2.setAttribute('src',"shirt_2_big.jpg");
+				big.appendChild(img2);
+				li[1].setAttribute("class","active");
+					
+				}
+			li[1].onmouseout=function(){
+				big.style.display='none';
+				big.innerHTML="";
+				li[1].setAttribute("class","img1");
+				
+			}
+			li[1].onmousemove=function(ev){
+				var ol=ev.clientX;
+				var ot=ev.clientY;
+				big.style.left	=ol+10+"px";
+				big.style.top=ot+10+"px";
+			}
+			li[2].onmouseover=function(){
+				big.style.display='block';
+				img2=document.createElement("img");
+				img2.setAttribute('src',"shirt_3_big.jpg");
+				big.appendChild(img2);
+				li[2].setAttribute("class","active");
+					
+			}
+			li[2].onmouseout=function(){
+				big.style.display='none';
+				big.innerHTML="";
+				li[2].setAttribute("class","img1");
+				
+			}
+			li[2].onmousemove=function(ev){
+				var ol=ev.clientX;
+				var ot=ev.clientY;
+				big.style.left	=ol+10+"px";
+				big.style.top=ot+10+"px";
+			}
+			li[3].onmouseover=function(){
+				big.style.display='block';
+				img2=document.createElement("img");
+				img2.setAttribute('src',"shirt_4_big.jpg");
+				big.appendChild(img2);
+				li[3].setAttribute("class","active");
+				
+			}
+			li[3].onmouseout=function(){
+				big.style.display='none';
+				big.innerHTML="";
+				li[3].setAttribute("class","img1");
+				
+
+			}
+			li[3].onmousemove=function(ev){
+				var ot = ev.clientY+10;
+				big.style.top = ot +'px';
+				var long = ev.clientX+10+big.offsetWidth;
+ 				if(long>document.body.clientWidth){
+ 				var ol = ev.clientX+10-big.offsetWidth;
+ 				big.style.left = ol+'px';
+ 				
+ 				}else if(long<document.body.clientWidth){
+ 				var ol = ev.clientX+10;
+ 				big.style.left = ol+'px';
+ 				}
+			}
+		</script>
+	</body>
+</html>

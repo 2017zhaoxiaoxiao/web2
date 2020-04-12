@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>对象1</title>
+	<style type="text/css">
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var dog={
+			name:'二哈',
+			breed:'Husky',
+			jump:function(){
+				alert('jumping');
+			}
+		}
+		function Obj(name){this.name=name;}
+	    var per = new Obj('lili');
+	    alert(per.name);
+	    var obj={name:'lily'}; 
+	    delete obj.name;
+	    alert(obj.name);
+		new关键字创建对象
+		var dog = new Object();
+		dog.name='Lily';
+		dog.breed='Husky';
+		dog.jump=function(){
+			alert('jumping');
+		}
+		dog['weight']=60;
+		对象的访问
+		alert(dog.name);
+		alert(dog['breed']);
+	   dog.jump();
+	    dog['jump']();
+	    删除对象的属性或者是方法
+	    delete dog.name
+	    显示对象的属性用key的方式遍历对象属性名
+	    for(key in dog){
+	    	alert(key);
+	    }
+	    显示对象的属性值遍历对象属性值
+	    for(key in dog){
+	    	alert(dog[key]);
+	    }
+	    var dog={
+			name:'二哈',
+			breed:'Husky',
+			jump:function(){
+				console.log(this);
+				alert('jumping');
+			}
+		}
+		dog.jump();
+
+
+
+
+		var movies1=new Object();
+		movies1.name='《007》';
+		movies1.type='动作片'
+		movies1.showTime=['7:00AM','12:00PM',"3:00PM"];
+		movies1.rating=8;
+
+		var movies2=new Object();
+		movies2.name='《指环王》';
+		movies2.type='惊险片'
+		movies2.showTime=['08:00','11:00',"13:00"];
+		movies2.rating=9;
+		//alert(movies2.showTime[0]);
+		movies1.rating=7;
+		movies2.nextShowTime=function(){
+			var now='10:00';
+			for(var i=0;i<this.showTime.length;i++){
+				if(parseInt(this.showTime[i])>=parseInt(now)){
+					alert(this.showTime[i]);
+					break;
+					
+				}
+				
+
+			}
+			
+		}
+		movies2.nextShowTime();
+		delete movies2.nextShowTime;
+		function movie(title,type,rating,showTime){
+			var movie={
+				titlt:title,
+				type:type,
+				rating:rating,
+				showTime:showTime,
+				nextShowTime:function(){
+					var now='10:00';
+					for(var i=0;i<this.showTime.length;i++){
+						if(parseInt(this.showTime[i])>=parseInt(now)){
+							alert(this.showTime[i]);
+							break;
+						}
+					}
+				}
+
+			}
+			return movie;
+		}
+		var movie3=movie('007','动作','9',['9:00','11:00','13:00']);
+
+	</script>
+</body>
+</html>

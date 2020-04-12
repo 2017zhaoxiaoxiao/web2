@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>放大镜</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+
+	}
+	ul,li,ol{
+		list-style: none;
+	}
+	#box{width:750px;
+		height:400px;
+		position:relative;
+		 margin:100px auto;
+		 border: 1px solid black;
+	}
+	#img1{
+		width:300px;
+		height:300px;
+		position:absolute;
+		left:0;
+		top:0;
+	}
+	#slider{
+		width:150px;
+		height:150px;
+		position:absolute;
+		left:0;
+		top:0;
+		background:#CCC;
+		opacity:0.4;
+		cursor: move;
+		display:none;
+		filter:alpha(opacity=40);
+	}
+	#img2{
+		position:absolute;
+		right:0;top:0;
+		display:none;
+		 width:400px;
+		 height:400px;
+		 overflow:hidden;
+	}
+	#Bimg{
+		position:absolute;
+		left:0;
+		top:0;
+	}
+</style>
+</head>
+<body>
+	<div id="box">
+    	<div id="img1">
+         	<img src="images/small.jpg" width="300" height="300"/>
+         	<div id="slider"></div>
+  		</div>       
+    	<div id="img2">
+        	<img src="images/big.jpg"  id="Bimg"/>
+   		 </div> 
+    </div>
+	<script type="text/javascript">
+		var img1=document.getElementById('img1');
+		var img2=document.getElementById('img2');
+		var slider=document.getElementById('slider');
+		var Bimg=document.getElementById('Bimg');
+		var box=document.getElementById('box');
+
+		img1.onmouseover=function(){
+			slider.style.display='block';
+			img2.style.display='block';
+		}
+		img1.onmouseout=function(){
+			slider.style.display='none';
+			img2.style.display='none';
+		}
+		img1.onmousemove=function(ev){
+			var ol=ev.clientX-box.offsetLeft-slider.offsetWidth/2;
+			var ot=ev.clientY-box.offsetTop-slider.offsetHeight/2;
+			
+			var omaxw=img1.offsetWidth-slider.offsetWidth;
+			var omaxh=img1.offsetHeight-slider.offsetHeight;
+			ol=ol>omaxw?omaxw:ol<0?0:ol;
+			ot=ot>omaxh?omaxh:ot<0?0:ot;
+			slider.style.left=ol+"px";
+			slider.style.top=ot+"px";
+			var scale=Bimg.offsetHeight/img1.offsetHeight;
+			Bimg.style.left=-ol*scale+"px";
+			Bimg.style.top=-ot*scale+"px";
+		}
+
+	</script>
+</body>
+</html>

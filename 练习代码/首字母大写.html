@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>首字母大写</title>
+	<style type="text/css">
+</style>
+</head>
+<body>
+	<!-- toUpperCase()首字母大写 -->
+	<script type="text/javascript">
+	// var str='abc';
+	var str='zhang wang li zhao';
+	var arr=str.split(' ');
+	// for (var i = 0; i <arr.length; i++) {
+	// 	arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].slice(1);
+	// }
+	arr.forEach(function(value,index,arr){
+		arr[index]=value.charAt(0).toUpperCase()+value.slice(1);
+	})
+	str=arr.join(' ');
+	document.write(str);
+	// var str1 =str.toUpperCase();
+	// alert(str1);
+	
+	</script>
+</body>
+<html>

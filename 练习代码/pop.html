@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pop弹出圆形</title>
+	<style>
+    body {
+        padding: 50px;
+    }
+
+    #div {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+        margin: 15px;
+        border-radius: 50%;
+    }
+    </style>
+</head>
+<body>
+<div id="div">
+    <div class="circle" style="background:rgba(100,100,200,0.4)"></div>   
+</div>
+    <script type="text/javascript">
+        //给元素添加时间属性和方法
+        var cir=document.getElementById("div");
+        var co=document.getElementsByClassName('circle');
+        cir.setAttribute('onclick','color()');
+        co.setAttribute('backgrount-color','reco()');
+        //实现添加圆的效果
+        function color(){
+            var a='<div class="circle" style="background:'+reco()+'"></div>';
+            document.getElementById("div").innerHTML+=a;
+        }
+        //随机生成颜色
+        function reco(){
+            var color ='rgba('+Math.random()*255+','+Math.random()*255+','+Math.random()*255+','+Math.random()+')';
+            return color;
+            
+        }
+    </script>
+</body>
+</html>

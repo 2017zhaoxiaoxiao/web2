@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>添加表格</title>
+    <style type="text/css">
+    
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="">我是列表第一项</a></li>
+		<li><a href="">我是列表第二项</a></li>
+		<li><a href="">我是列表第三项</a></li>
+		<li><a href="">我是列表第五项</a></li>
+	</ul>
+	<script type="text/javascript">
+		var li=document.createElement('li');
+		var a=document.createElement('a');
+		var text=document.createTextNode('我是列表第四项');
+		var d=document.body.firstElementChild.lastElementChild ;
+		var c=document.body.firstElementChild;
+		c.insertBefore(li,d);
+		li.appendChild(a);
+		a.appendChild(text);
+		a.setAttribute("href","");
+
+		
+	</script>
+</body>
+</html>

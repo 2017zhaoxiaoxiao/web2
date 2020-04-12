@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>add1</title>
+	<style type="text/css">
+	
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		// var str ="1a2a.bb.cc.dd";
+		// var str1=str.split('a');
+		// alert(str1);
+
+		//var arr=['a','b','c'];
+		//var arr1=new Array('a','b','c');
+		// var arr1=new Array(3);
+		// arr1[0]='a';
+		// arr1[1]='b';
+		// arr1[2]='c';
+		// arr1[3]='d';//可以超出字符串其实定义的长度
+		// alert(arr1);//结果：a,b,c,d
+		// var msg=[["可以超出字符","串其实定义的长度"],["可以超出字符串其实定义的长度"]];.
+		// alert(arr.length);//3
+		// alert(arr1.length);//4
+		// alert(msg.length);//2
+		// alert(msg[0].length);//2
+		// alert(arr.shift());//删除并返回数组的第一个元素
+		// alert(arr);//b,c
+		// alert(arr.pop())//删除并返回数组的最后一个元素
+		// alert(arr);//b
+		// alert(arr.unshift('1','2'));//3
+		// alert(arr);//1,2,b
+		// alert(arr.push('3','4'));
+		// arr1=['x','y'];
+		//alert(arr.concat(arr1));
+		//arr  1,2,b,3,4
+		// alert(arr.splice(1,1,'hello'));//添加字符串到下标为1的位置,并删除下标为往后的一个元素的元素并返回
+		// alert(arr);
+		var msg =[['这是第1条帖子','这是贴纸的蛀牙内容','张三','2018.10.16'],['这是第2条帖子','这是贴纸的蛀牙内容','张三','2018.10.16'],['这是第3条帖子','这是贴纸的蛀牙内容','张三','2018.10.16'],['这是第4条帖子','这是贴纸的蛀牙内容','张三','2018.10.16'],['这是第5条帖子','这是贴纸的蛀牙内容','张三','2018.10.16']];
+		//document.write(msg.length);
+		//alert(msg.length);
+		document.write('<table border="1px ">');
+		for(var i=0;i<msg.length;i++){
+			document.write('<tr>');
+			for(var j=0;j<msg[i].length;j++){
+				 document.write('<td>');
+				 
+				if(j==1&&msg[i][j].length>5){
+					var text=msg[i][j].substr(0,5)+'......';
+					document.write(text);
+				}
+				else{
+					document.write(msg[i][j]);
+				}
+				document.write('</td>');
+			}
+		document.write('</tr>');
+	}
+		document.write('</table>');
+
+	</script>
+</body>
+</html>

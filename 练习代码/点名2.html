@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>点名</title>
+	<style type="text/css">
+	div{
+		text-align: center;
+		font-size: 80px;
+		height: 300px;
+	}
+	</style>
+</head>
+<body>
+<div id = 'box'>按任意键开始点名</div>
+<script type="text/javascript">
+
+var str = `黄碧莲
+周弘
+李同
+许凯
+粟慧军
+张傲阳
+高清鑫
+林桃
+谢卿卉
+李春波
+王盼
+张璐婷
+邸凯扬
+苏祺
+赵晓宇
+刘莉娅
+吴金雅
+安佳
+徐航
+孟宜壕
+刘万里
+霍学锐
+李汉霄
+周宣
+曹倩
+代天放
+王梦
+王天伟
+蔡子轩
+王佳成
+邸祯策
+赵政
+吕学齐
+高予蜀
+董心
+孙童
+牛玉欣
+闫昆
+候玉芹
+王陆宇
+卢旺达
+李奥
+郑芯蕊
+杜剑
+李啸昆
+徐铮
+张梦如
+杨小云
+刘子义
+闫文鑫
+邓敖
+冯聪
+方晓伟
+黄瑞如
+康奥钒
+周义青
+聂丹
+许莹心
+吴东枚
+秦峰悦
+刘彬
+闫儒彪
+景光赞
+薛宝祥
+褚雅琦
+杜浩裕
+张帅华
+侯雪鹏
+程璐
+郑玉莹
+赵冰雨
+张彤
+张丽坤
+吴雪瑶
+王胜莹
+司涵
+杨昕迪
+薛超凡
+赵肖肖
+李晓萌
+周亦钊
+皇甫玉茹
+刘梦圆
+刘佳豪
+徐春阳
+孙宇飞
+梁宏宇
+杨飞宇
+李帅
+张松
+刘明瑛
+杨锡涛
+马云龙
+张学伟
+李和谦
+刘子扬
+孙建旺
+冯家亨`;
+var arr = str.split('\n');
+var i=0;
+var time;
+var flag = true;
+function loop() {
+	var box = document.getElementById('box');
+	box.innerHTML = arr[i];
+	i++;
+	i>=arr.length&&(i=0);
+};
+document.onkeydown = function(){
+	flag?time = setInterval(loop,10):clearInterval(time);
+	flag=!flag;
+}
+</script>
+</body>
+</html>

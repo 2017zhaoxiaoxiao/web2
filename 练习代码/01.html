@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>add1</title>
+	<style type="text/css">
+	div{
+		height:200px;
+		width:200px;
+		background: pink;
+
+	}
+</style>
+</head>
+<body>
+	<input type="text" name="username" onfocus="fun1()" onblur="fun()"/>用户名
+	<div onmouseover="mouseOver()">
+
+	</div>
+	<script type="text/javascript">
+		function mouseOver(){
+			alert('onmouseover');
+		}
+		function fun1(){
+			alert("请输入用户名");
+		}
+		function fun(){
+			alert("确定该用户名？");
+		}
+		// var a;
+		// var b=a*0;
+		// alert(b);
+		// if(b==b){
+		// 	console.loog(b*2+"2"-0+4);
+
+		// }
+		// else{
+		// 	console.log(!b*2+"2"-0+4);
+		// }
+		// 
+		// fn1();//函数有预加载功能所以可以先调用在定义函数
+		// function fn1(){
+		// 	alert(1);
+		// }
+
+
+		// fn1();//会报错，因为fn1为一变量，变量未声明之前不能用，与函数名名不同
+		// var fn1=function(){
+		// 	alert(1);
+		// }
+		// function add(){
+		// 	return 3;
+		// }
+		// function add1(){
+		// 	add();
+		// }
+		// console.log(add1());//Undefined
+
+		// function add(){
+		// 	return 3;
+		// }
+		// function add1(){
+		// 	return add();
+		// }
+		// console.log(add1()); //3
+		// var i=0;
+		// function fn(){
+		// 	i++;
+		// 	if(i<10){
+		// 		fn();
+		// 	}
+		// 	else{
+		// 		return i;
+		// 	}
+		// }
+		// var result=fn();
+		// console.log(result);//undefined
+		//var i=0;
+		// function fn(){
+		// 	i++;
+		// 	if(i<10){
+		// 		return fn();
+		// 	}
+		// 	else{
+		// 		return i;
+		// 	}
+		// }
+		// var result=fn();
+		// console.log(result);//10
+	</script>
+</body>

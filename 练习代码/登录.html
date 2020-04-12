@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>登录</title>
+	<style type="text/css">
+	#box{
+		width:342px;
+		height:290px;
+		border: 2px solid #1587e8;
+		margin: auto;
+	}
+	p{
+
+	}
+	.a{
+		color:#1587e8;
+		font-size:18px;
+		float: left;
+		margin-top:10px;
+		margin-left:20px; 
+		margin-bottom: 28px;
+	}
+	.b{
+		float:left;
+		margin-top:10px;
+		margin-left:25px;
+		font-size:16px;
+		margin-bottom: 28px;
+
+	}
+	.c{ 
+		width:304px;
+		height:36px;
+		margin-left:18px;
+		padding-left:6px; 
+	}
+	.d{
+		float:left;
+		margin-left: 18px;
+	}
+	.e{
+		float:left;
+		font-size: 16px;
+		margin-top: 0px;
+	}
+	.f{
+		
+		width:304px;
+		height:38px;
+		margin-left:18px;
+		background-color:#1587e8; 
+		color:white;
+		font-size:14px; 
+	}
+	#k{
+		font-size:12px;
+		margin-left: 18px;
+		margin-top: 2px;
+		height:30px;
+	}
+	#n{
+		font-size:12px;
+		margin-left: 18px;
+		margin-top: 2px;
+		height:30px;
+	}
+</style>
+</head>
+<body>
+	<div id='box'>
+		<p class="a">Web开发二</p>
+		<p class="b">用户名密码登陆</p>
+		<input class="c" onclick="show()" onblur="lose()" type = "text" name = "用户名" placeholder = "用户名" />
+		<div id="k">
+		</div>
+		<input class="c" onclick="show1()" onblur="lose1()" type = "password" name = "用户名" placeholder = "密码" />
+		<div id="n">
+		</div>
+		<input class="d" type = "checkbox"  name = "chose" />
+		<p class="e">下一次自动登录</p>
+		<input class="f" type="button" value="登录"/>
+	</div>
+	<form>
+
+	</form>
+	<script type="text/javascript">
+		function show(){
+			var word="请输入6—12位用户名";
+			document.getElementById("k").innerHTML=word;
+		}
+		function show1(){
+			var word="密码必须为数字、字母的混合使用";
+			document.getElementById("n").innerHTML=word;
+		}
+		function lose(){
+			document.getElementById("k").innerHTML="";
+		}
+		function lose1(){
+			document.getElementById("n").innerHTML="";
+		}
+	</script>
+</body>
+</html>

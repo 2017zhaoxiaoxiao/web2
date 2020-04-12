@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <link rel="stylesheet" href="css/7-2.css">
+    <style type="text/css">
+    .red{
+        color:red;
+    }
+</style>
+</head>
+
+<body>
+    <p>我喜欢的水果:</p>
+    <ul id="fruit">
+        <li>百香果</li>
+        <li>山竹</li>
+        <li class="three">火龙果</li>
+        <li>猕猴桃</li>
+    </ul>
+    <p>我喜欢的动物:</p>
+    <ul id="animal">
+        <li>小猴子</li>
+        <li>狮子</li>
+        <li class="three">小猪</li>
+        <li>大熊猫</li>
+    </ul>
+    <script type="text/javascript">
+      var fruit=document.getElementById('fruit');
+      //console.log(fruit);
+      var p =document.getElementsByTagName('p');
+      //console.log(typeof p);
+      var three=document.getElementsByClassName('three');
+      //console.log(three);
+      // for(var i=0;i<p.length;i++){
+      //   document.write(p[i].innerHTML);
+
+      // }
+      var html =document.documentElement;
+     // console.log(html);
+     var head=document.head;
+     var body=document.body;
+     //console.log(body);
+
+
+     ///////////////////////////////////////////////////////////////////////
+     //从父节点找子节点
+     //节点数
+     //console.log(fruit.childNodes);
+     //元素树
+     //console.log(fruit.children);
+     //通过下标找子节点
+     //console.log(fruit.children[0]);
+     //找第一个子节点和最后一个子节点
+     // console.log(fruit.firstChild);
+     // console.log(fruit.firstElementChild);
+     // console.log(fruit.lastChild);
+     // console.log(fruit.lastElementChild);
+     //通过子节点找父节点
+     // console.log(fruit.parentNode);
+     // console.log(fruit.parentElement);
+     //获得前一个的兄弟节点
+     // console.log(fruit.previousSibling);
+     // console.log(fruit.previousElementSibling);
+     // console.log(fruit.nextSibling);
+     // console.log(fruit.nextElementSibling);
+     //p[0].innerHTML='123';
+     var id=fruit.getAttribute('id');
+     //console.log(id);
+     fruit.setAttribute('class','red');//添加一个属性
+     fruit.removeAttribute('class');
+     
+    </script>
+
+</body>
+
+</html>

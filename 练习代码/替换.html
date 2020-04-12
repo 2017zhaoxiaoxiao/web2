@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>替换结点</title>
+    <style type="text/css">
+    
+</style>
+</head>
+<body>
+	<ul id="ls">
+		<li>苹果</li>
+		<li>香蕉</li>
+		<li>西瓜</li>
+	</ul>
+	<script type="text/javascript">
+		var li=document.createElement("li");
+		var text=document.createTextNode("菠萝");
+		li.appendChild(text);
+		var last=document.getElementById("ls").children[0];
+		ls.replaceChild(li,last);
+
+	</script>
+</body>
+</html>

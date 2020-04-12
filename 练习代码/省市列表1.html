@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>省市列表</title>
+    <style>
+        body {
+            padding: 100px;
+            font-size: 30px;
+        }
+
+        select {
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    省份：<select id="province">
+        <option value="-1">--请选择省份--</option>
+        <option value="0">河北</option>
+        <option value="1">广西</option>
+        <option value="2">陕西</option>
+    </select>
+
+    城市：<select id="city">
+        <option>--请选择城市--</option>
+    </select>
+    <script>
+        var cities = [
+            ['石家庄', '邢台', '邯郸', '唐山', '秦皇岛'],
+            ['南宁', '桂林', '百色', '北海', '柳州'],
+            ['西安', '汉中', '宝鸡', '咸阳', '安康'],
+        ];
+
+        //new Option(text, value, defaultSelected, selected);
+        //第一个TRUE是(默认被选项，即焦点的在项，只有一个)defaultselected，相当于  <option   selected></option>  
+        //第二个TRUE是被选择项（可多行被选择），用于multiple模式
+        var provinceSel = document.getElementById("province");
+        var citySel = document.getElementById("city");
+		//注意表单的onchange事件
+        provinceSel.onchange = function () {
+          	// 第一种方法
+			var str = '<option value="-1">--请选择城市--</option>';
+			for(var i=0;i<cities[this.value].length;i++){
+			    str += '<option value="'+i+'">'+ cities[this.value][i] +'</option>';
+			}
+			citySel.innerHTML = str;
+			
+			// 第二种方法
+            // citySel.innerHTML = '<option>--请选择城市--</option>';//和下面一行功能一样
+            // citySel.options.length = 1; //每当省份选择改变的时候需要将城市列表长度变成1
+            // for (var i = 0; i < cities[provinceSel.value].length; i++) {
+            //     var cityOpt = document.createElement('option');
+            //     cityOpt.innerText = cities[provinceSel.value][i];
+            //     cityOpt.value = i;
+            //     citySel.appendChild(cityOpt);
+            // }
+            
+
+            // 第三种方法（不需要掌握）
+            // citySel.options.length = 1; //每当省份选择改变的时候需要将城市列表长度变成1
+            // for (var i = 0; i < cities[provinceSel.value].length; i++) {
+            //     citySel.add(new Option(cities[provinceSel.value][i], i));
+            // }
+        };
+    </script>
+</body>
+
+</html>

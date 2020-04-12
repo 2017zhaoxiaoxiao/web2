@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+</HEAD>
+<script language='javascript'>
+function g(obj){
+var div=document.getElementById('content');
+var element=document.createElement('img');
+element.src=obj.src;
+//可以把图片的路径放到一个变量里面，然后提交到后台
+//或者后台用正则表达式取也行
+div.appendChild(element);
+
+} 
+
+</script>
+<BODY>
+<img src='1.gif' onclick='g(this)'/>
+<div id='content' contentEditable='true' style='border:1px solid blue;width:600px;height:400px'>
+
+</div>
+</BODY>
+</HTML> 

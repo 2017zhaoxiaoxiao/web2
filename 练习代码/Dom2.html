@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style type="text/css">
+    
+</style>
+</head>
+<body>
+	<div>
+		<h1>我是标题</h1>
+		<a href="登录.html" id="list">我是超链接</a>
+	</div>
+	<script type="text/javascript">
+		var list=document.getElementById('list');
+		var href=list.getAttributeNode('href');
+		var text=list.firstChild;
+		console.log(list.nodeType);//值为1为元素节点
+		console.log(text.nodeType);//3位文本节点
+		console.log(href.nodeType);//2为属性节点
+		console.log(list.nodeName);//A
+		console.log(text.nodeName);//#text
+		console.log(href.nodeName);//href
+		console.log(list.nodeValue);//null
+		console.log(href.nodeValue);//登录.html
+		console.log(text.nodeValue);//我是超链接
+		var btn=document.createElement('button');
+		//给body添加一个子节点
+		//document.body.appendChild(btn);
+		//在已有子节点前插入一个新的子节点
+		list.parentNode.insertBefore(btn,mlist);
+		var text1=document.createTextNode('不许按！！！');
+		btn.appendChild(text1);
+
+	</script>
+</body>
+</html>
